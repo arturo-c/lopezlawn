@@ -30,23 +30,14 @@ gem 'jquery-rails'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
-
 # Refinery CMS
 gem 'refinerycms', '~> 2.1.0'
 
 # Optionally, specify additional Refinery CMS Extensions here:
 gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 #  gem 'refinerycms-blog', '~> 2.1.0'
-#  gem 'refinerycms-inquiries', '~> 2.1.0'
 #  gem 'refinerycms-search', '~> 2.1.0'
-#  gem 'refinerycms-page-images', '~> 2.1.0'
 
 gem 'twitter-bootstrap-rails'
+gem 'refinerycms-page-images', '~> 2.1.0'
+gem 'refinerycms-inquiries', '~> 2.1.0'

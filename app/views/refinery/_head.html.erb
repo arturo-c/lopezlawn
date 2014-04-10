@@ -6,8 +6,9 @@
 <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
 <%= yield :meta %>
 
-<%= stylesheet_link_tag "application" %>
+<%= stylesheet_link_tag 'application' %>
 <%= yield :stylesheets %>
+<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 
 <%= render '/refinery/google_analytics' %>
 

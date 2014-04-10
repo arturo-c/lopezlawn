@@ -17,7 +17,7 @@ module Refinery
 
       self.dom_id = :div
       self.css = ["nav-collapse", "collapse", "navbar-responsive-collapse"]
-      self.menu_tag = :nav
+      self.menu_tag = :div
       self.list_tag = :ul
       self.list_first_css = :nav
       self.carret = '<b class="caret"></b>'

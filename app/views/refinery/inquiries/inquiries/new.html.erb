@@ -1,0 +1,51 @@
+<% content_for :body do %>
+  <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
+  
+  <div class='inquiries'>
+    <%= form_for [refinery, :inquiries, @inquiry], :html => { :class => "form-horizontal" } do |f| %>
+      <%= render :partial => "/refinery/admin/error_messages",
+                 :locals => {
+                   :object => @inquiry,
+                   :include_object_name => true
+                 } %>
+      <div class="control-group">
+        <%= f.required_label :name, :class => 'control-label placeholder-fallback' %>
+        <div class="controls">
+          <%= f.text_field :name, :class => 'text', :required => 'required',
+            :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.required_label :email, :class => 'control-label placeholder-fallback' %>
+        <div class="controls">
+          <%= f.email_field :email, :class => 'text email', :required => 'required',
+            :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders %>
+        </div>
+      </div>
+
+      <% if Refinery::Inquiries.show_phone_number_field %>
+        <div class="control-group">
+          <%= f.label :phone, :class => 'control-label placeholder-fallback' %>
+          <div class="controls">
+            <%= f.text_field :phone, :class => 'text phone',
+              :placeholder => t('phone', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="control-group">
+        <%= f.required_label :message, :class => 'control-label placeholder-fallback' %>
+        <div class="controls">
+          <%= f.text_area :message, :rows => 8, :required => 'required',
+            :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+        <%= f.submit t('.send'), :class => 'btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<%= render '/refinery/content_page' %>

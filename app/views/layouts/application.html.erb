@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<%= render '/refinery/html_tag' %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
+  <head>
+    <%= render '/refinery/head' %>
+  </head>
+  <body id="<%= canonical_id @page %>">
+    <%= site_bar -%>
+    <div class="container main-container">
+      <header id="header">
+        <%= render "/refinery/header" -%>
+      </header>
+      <div class="container">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="/assets/Lopez-1b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-2b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-3b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-4b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-5b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-6b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-7b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-8b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-9b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-10b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-11b.jpg" title="" alt=""/>
+            </div>
+            <div class="item">
+              <img src="/assets/Lopez-12b.jpg" title="" alt=""/>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
+        <div id="text-container">
+          <%= yield %>
+        </div>
+      </div>
+      <footer>
+        <%= render '/refinery/footer' -%>
+      </footer>
+    </div>
+    <%= render '/refinery/javascripts' %>
+    <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+  </body>
+</html>
