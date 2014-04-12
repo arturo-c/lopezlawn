@@ -6,8 +6,4 @@ class UserMailer < ActionMailer::Base
     @url  = 'http://lopezlawnandlandscape.com/login'
     mail(to: @user.email, subject: 'Welcome to Lopez Lawn and Landscape')
   end
-
-  def contact_email
-    mail(to: )
-  end
 end
