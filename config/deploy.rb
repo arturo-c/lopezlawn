@@ -21,6 +21,7 @@ ssh_options[:keys] = ['~/.ssh/id_rsa']
 set :scm, :git
 set :repository, "git@github.com:arturo-c/#{GITHUB_REPOSITORY_NAME}.git"
 set :branch, 'master'
+set :unicorn_pid, "#{deploy_to}/current/tmp/unicorn.pid"
 
 # Roles
 role :app, LINODE_SERVER_HOSTNAME
@@ -85,7 +86,7 @@ namespace :deploy do
   task :set_permissions do
     puts '\n\n=== Setting Permissions! ===\n\n'
     run "chown -R www-data:www-data #{deploy_to}"
-    run "chmod -R 666 #{deploy_to}"
+    run "chmod -R 766 #{deploy_to}"
   end
 
   desc 'Creates the production log if it does not exist'
