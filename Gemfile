@@ -41,3 +41,10 @@ gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 gem 'twitter-bootstrap-rails'
 gem 'refinerycms-page-images', '~> 2.1.0'
 gem 'refinerycms-inquiries', '~> 2.1.0'
+gem 'capistrano', '~> 2.15'
+gem 'capistrano-unicorn'
+gem 'rvm-capistrano'
+group :production do
+  gem 'unicorn'
+  gem 'therubyracer'
+end
