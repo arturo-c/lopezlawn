@@ -30,8 +30,8 @@ role :app, LINODE_SERVER_HOSTNAME
 #   that should be created after each deployment
 symlink_configuration = [
     %w(config/database.yml    config/database.yml),
-    %w(db/production.sqlite3  db/production.sqlite3),
-    %w(public/system                 public/system)
+    %w(production.sqlite3  db/production.sqlite3),
+    %w(system                 public/system)
 ]
 
 deploy.task :restart, :roles => :app do
@@ -101,7 +101,7 @@ namespace :deploy do
   task :setup_symlinks do
     puts '\n\n=== Setting up Symbolic Links! ===\n\n'
     symlink_configuration.each do |config|
-      #run "ln -nfs #{File.join(shared_path, config[0])} #{File.join(release_path, config[1])}"
+      run "ln -nfs #{File.join(shared_path, config[0])} #{File.join(current_path, config[1])}"
     end
   end
 end
