@@ -93,6 +93,7 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     orm_adapter (0.5.0)
+    pg (0.18.4)
     polyglot (0.3.4)
     rack (1.4.5)
     rack-cache (1.2)
@@ -227,6 +228,7 @@ DEPENDENCIES
   capistrano-unicorn
   coffee-rails (~> 3.2.1)
   jquery-rails
+  pg
   rails (= 3.2.16)
   refinerycms (~> 2.1.0)
   refinerycms-acts-as-indexed (~> 1.0.0)

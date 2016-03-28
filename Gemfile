@@ -45,6 +45,7 @@ gem 'capistrano', '~> 2.15'
 gem 'capistrano-unicorn'
 gem 'rvm-capistrano'
 group :production do
+  gem 'pg'
   gem 'unicorn'
   gem 'therubyracer'
 end
